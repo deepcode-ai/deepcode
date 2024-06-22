@@ -1,5 +1,5 @@
 # Use a base image with CUDA 10.2
-FROM nvidia/cuda:latest
+FROM nvidia/cuda:12.5.0-devel-ubuntu22.04
 
 # Set environment variables
 ENV CUDA_HOME=/usr/local/cuda
