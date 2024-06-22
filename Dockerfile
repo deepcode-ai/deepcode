@@ -13,7 +13,8 @@ WORKDIR /app
 COPY . .
 
 # Install Apex
-RUN cd third_party/apex && \
+RUN git clone https://github.com/NVIDIA/apex && \
+    cd apex && \
     pip3 install -v --no-cache-dir --global-option="--cpp_ext" --global-option="--cuda_ext" .
 
 # Expose the necessary port (example: 8000)
