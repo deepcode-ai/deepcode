@@ -13,13 +13,6 @@ RUN apt-get update && apt-get install -y python3.8 python3-pip && \
 # Set the working directory
 WORKDIR /app
 
-# Copy only the necessary files to install dependencies
-COPY pyproject.toml poetry.lock ./
-
-# Install dependencies
-RUN poetry config virtualenvs.create false \
-  && poetry install --no-root --only main --no-dev --no-interaction --no-ansi
-
 # Copy the rest of the code
 COPY . .
 
